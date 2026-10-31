@@ -1,0 +1,8 @@
+Options -Indexes
+<FilesMatch "^(schema\.sql|seed-pcs\.sql|.*\.db|.*\.sqlite|.*\.sqlite3)$">
+    Require all denied
+</FilesMatch>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(?:config|includes|database)/ - [F,L]
+</IfModule>
